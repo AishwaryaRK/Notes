@@ -479,7 +479,7 @@ performance:
 5. iostat
 6. iotop
 7. perf
-
+```
     uptime       # how long the system has been running.
     # 03:13:58 up 4 days, 22:45,  1 user,  load average: 0.00, 0.00, 0.00
     
@@ -532,6 +532,8 @@ performance:
     # CPU cycles
     # TLB misses
     # branch prediction misses
+
+```
 
 lsof - ls open files:
 
