@@ -12,6 +12,7 @@ Resources:
 8. [topcoder time complexity 2](https://www.topcoder.com/community/competitive-programming/tutorials/computational-complexity-section-2/)
 9. [dynamic programming](https://www.topcoder.com/community/competitive-programming/tutorials/dynamic-programming-from-novice-to-advanced/)
 10. [daily coding problem](https://www.dailycodingproblem.com/?ref=csdojo)
+11. [Google mit Qs](http://courses.csail.mit.edu/iap/interview/materials.php)
 11. geekforgeeks, leetcode, topcoder, codeforces, interview bit, bytesforbytes
 
 Algorithm design canvas:
