@@ -1,6 +1,6 @@
 # InfluxDB Data Downsampling
 
-drop retention policy "default" on "monitoring"
+    drop retention policy "default" on "monitoring"
     
     ALTER RETENTION POLICY autogen ON "monitoring" DURATION 2w REPLICATION 1 SHARD DURATION 0h5m0s DEFAULT
     
