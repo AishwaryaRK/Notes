@@ -13,7 +13,8 @@ Resources:
 9. [dynamic programming](https://www.topcoder.com/community/competitive-programming/tutorials/dynamic-programming-from-novice-to-advanced/)
 10. [daily coding problem](https://www.dailycodingproblem.com/?ref=csdojo)
 11. [Google mit Qs](http://courses.csail.mit.edu/iap/interview/materials.php)
-11. geekforgeeks, leetcode, topcoder, codeforces, interview bit, bytesforbytes
+12. [Stanford acm material](https://github.com/jaehyunp/stanfordacm)
+13. geekforgeeks, leetcode, topcoder, codeforces, interview bit, bytesforbytes
 
 Algorithm design canvas:
 
