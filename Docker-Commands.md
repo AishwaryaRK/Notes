@@ -1,6 +1,6 @@
 # Docker Commands
 
-#Build & Tag	         
+    #Build & Tag	         
     docker build -t repo/app:latest .
     
     #Tag image	         
