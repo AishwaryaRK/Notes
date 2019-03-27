@@ -1,9 +1,9 @@
 # Docker Commands
 
    Build & Tag	         
-    ```
+   ```
     docker build -t repo/app:latest .
-    ```
+   ```
     
    Tag image
    ```
