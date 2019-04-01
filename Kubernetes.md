@@ -14,6 +14,7 @@ Resources
 7. [accessing pods from outside of the cluster](http://alesnosek.com/blog/2017/02/14/accessing-kubernetes-pods-from-outside-of-the-cluster/)
 8. [external dns](https://medium.com/@marekbartik/google-kubernetes-engine-with-external-dns-on-cloudflare-provider-24beb2a6b8fc)
 9. [external dns issue](https://github.com/kubernetes-incubator/external-dns/issues/262)
+10. [ssl](https://docs.bitnami.com/kubernetes/how-to/secure-kubernetes-services-with-ingress-tls-letsencrypt/)
 
 Helm cmds:
 
@@ -95,3 +96,5 @@ Kubectl cmds:
     
     #Rollback to any version version       
     kubectl rollout undo deployment/helloworld-deployment --to-revision=n
+
+    kubectl get events -w
