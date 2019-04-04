@@ -12,6 +12,7 @@ Resources:
 8. [coder's journey](https://www.acodersjourney.com/?s=system+design)
 9. [Julia Evans](https://jvns.ca/)
 10. [architecting systems for scale](https://lethain.com/introduction-to-architecting-systems-for-scale/)
+11. [pramp](https://blog.pramp.com/)
 
 System design process:
 

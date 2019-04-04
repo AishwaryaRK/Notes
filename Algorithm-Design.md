@@ -14,7 +14,11 @@ Resources:
 10. [daily coding problem](https://www.dailycodingproblem.com/?ref=csdojo)
 11. [Google mit Qs](http://courses.csail.mit.edu/iap/interview/materials.php)
 12. [Stanford acm material](https://github.com/jaehyunp/stanfordacm)
-13. geekforgeeks, leetcode, topcoder, codeforces, interview bit, bytesforbytes
+13. [pramp](https://blog.pramp.com/)
+14. [good programming interview](http://www.lihaoyi.com/post/HowtoconductagoodProgrammingInterview.html)
+15. [grading rubric](https://medium.engineering/engineering-interviews-grading-rubric-8b409bec021f)
+16. [how to succeed in ds and algo interview](https://blog.pramp.com/how-to-succeed-in-data-structures-and-algorithms-interview-2ad1a28041b6)
+17. geekforgeeks, leetcode, topcoder, codeforces, interview bit, bytesforbytes
 
 Algorithm design canvas:
 
