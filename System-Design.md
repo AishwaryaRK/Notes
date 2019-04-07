@@ -13,6 +13,7 @@ Resources:
 9. [Julia Evans](https://jvns.ca/)
 10. [architecting systems for scale](https://lethain.com/introduction-to-architecting-systems-for-scale/)
 11. [pramp](https://blog.pramp.com/)
+12. [system design 2](https://github.com/donnemartin/system-design-primer)
 
 System design process:
 
