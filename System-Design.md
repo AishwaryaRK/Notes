@@ -56,9 +56,9 @@
     2. Disk: PATA, SATA, SAS, SSD, RAID
     3. RAM
 
-2. **`Horizontal scaling`** - clones
+2. #### `Horizontal scaling`** - clon
 
-3. **`Load balancing`**
+3. #### `Load balancing`
     1. High availability
         1. active-active LBs
         2. active-passive LBs
@@ -75,14 +75,14 @@
     4. geography based load balancing - at DNS level / global LB
     5. elastic scalability
 
-4. **`Proxy server`**
+4. #### `Proxy server`
     1. filter requests 
     2. log requests
     3. transform requests (by adding/removing headers, encrypting/decrypting, or compressing a resource)
     4. cache
     5. reverse proxy
 
-5. **`Caching`**
+5. #### `Caching`
     1. query cache in db
     2. memcached - indexes in mem (influxdb)
     3. LRU, MRU(Most), FIFO, LIFO, LFU(least frequent), RR(Random replacement)
@@ -99,11 +99,11 @@
         1. CDN → overlay n/w → IP n/w (IP addr) is an overlay on LAN (MAC addr) → CDN (Node ID) is an overlay on TCP/IP (IP addr)
         2. coral key-based routing
 
-6. **`Sessions-cookies`** → multiple servers don't store state in their hard drive but in a global shared storage(fs,db) or in Load balancer → but then this shared storage or load balancer becomes a bottleneck, SPOF → storing server hash in cookie for load balancer to send the req of a particular session to the same server → RAID → sharding, replication
+6. #### `Sessions-cookies`** → multiple servers don't store state in their hard drive but in a global shared storage(fs,db) or in Load balancer → but then this shared storage or load balancer becomes bottleneck, SPOF → storing server hash in cookie for load balancer to send the req of a particular session to the same server → RAID → sharding, replication
 
 7. Platform layer b/w application and db. Platform server is more I/O intensive (needs SSD) and application server is more cpu intensive for compute. Product agnostic platform interface.
 
-8. **`DB`** 
+8. #### `DB`*
     1. out of space → archive data
     2. denormalization - no joins in db queries - app does the dataset-joins
     3. sql tuning
@@ -119,9 +119,9 @@
         3. wide column → cassandra, HBase (twitter, fb, instagram - followers, tweets)
         4. graph → Neo4j, InfiniteGraph 
 
-9. **`Data deduplication`**
+9. #### `Data deduplication`
 
-10. **`Replication`**
+10. #### `Replication`
     1. master-slave
     2. master-master
     3. read from slaves, write to masters
@@ -133,7 +133,7 @@
         2. all write to master must be replicated to slaves
         3. replication lag causes slave lag
 
-11. **`Sharding / Partitioning`**
+11. #### `Sharding / Partitioning`
     1. high availability
     2. faster queries
     3. reduces contention in data store
@@ -161,37 +161,37 @@
     13. sharding based on ID(user/entity), creation time, (creation time epoch + auto inc ID)
     14. locations across the world → location QuadTree
 
-12. **`Federation`** - functional partitioning - splits up databases by function.
+12. #### `Federation`** - functional partitioning - splits up databases by functio
 
 13. Reed-Solomon encoding to distribute and replicate data.
 
-14. **`Map-Reduce / Scatter-Gather`** → hadoop [batch processing, HDFS, Hive] / Spark [RDD, batch/stream processing] / Apache Storm [streaming data processing] / lambda architecture [batch/stream processing] / flink
+14. #### `Map-Reduce / Scatter-Gather`** → hadoop [batch processing, HDFS, Hive] / Spark [RDD, batch/stream processing] / Apache Storm [streaming data processing] / lambda architecture [batch/streaprocessing] / flink
 
 15. Geographically distributed data centres - availability zones
 
-16. **`High availability`**
+16. #### `High availability`
     1. Do a multi-availability zones deployment
     2. automatic db snapshots
 
-17. **`API rate limiting / throttling`**
+17. #### `API rate limiting / throttling`
     1. hard/soft throttling
     2. elastic/dynamic throttling
     3. fixed window algorithm
     4. rolling window algorithm
 
-18. **`Security`**
+18. #### `Security`
     1. tcp 80/443 → LB → SSL termination
     2. tcp 80 → server
     3. tcp db-port → db
     4. IP blacklisting and whitelisting
 
-19. **`Being asynchronous`** → loosely coupling subsystems
+19. #### `Being asynchronous`** → loosely coupling subsyste
     1. precomputing
     2. signal/event/callback
     3. messaging
         1. message queues
 
-20. **`Kafka`**
+20. #### `Kafka`
     1. distributed message queue
     2. message - immutable array of bytes
     3. topic - queue
@@ -205,7 +205,7 @@
         1. producers use it to find partitions and replication information
         2. consumers use it to track current index, zookeeper keeps per consumer per partition current index
 
-21. **`Zookeeper`**
+21. #### `Zookeeper`
     1. distributed in-memory db 
     2. leader-followers
     3. eventual consistency
@@ -215,9 +215,9 @@
 
 22. Long polling, web sockets, server-sent events, pub-sub model, push notification
 
-23. **`pagination`**
+23. #### `pagination`
 
-24. **`Consistent hashing`**
+24. #### `Consistent hashing`
     1. elastic scaling for cache servers (dynamic adding/removing of servers based on usage load), storage nodes (NoSQL dbs)
     2. every time we scale up or down, we do not have to re-arrange all the keys or touch all the database servers
     3. when a server goes down, use reverse index/hash → index/hash builder → {server_id: hashset(data_ids)}, server data snapshot
@@ -225,7 +225,7 @@
     5. Facilitates Replication and partitioning of data across servers
     6. relieves hot spots
 
-25. **`Eventual consistency`** - distributed computing
+25. #### `Eventual consistency`** - distributed computi
     1. gives high availability → all nodes are always available to be read but some nodes may have stale data at a particular point of time
     2. lower latency
     3. read scalability
@@ -236,18 +236,18 @@
         3. DNS (Domain Name System)
     6. x strict/strong/immediate consistency → all readers are blocked until replication of the new data to all the nodes are complete
 
-26. **`Strong Consistency`**
+26. #### `Strong Consistency`
     1. R+W>N
     2. R = #nodes which should agree when data is read 
     3. W = #nodes which should acknowledge the update when data changes
     4. N = #nodes to know the data(#replicas)
 
-27. **`CAP theorem`**
+27. #### `CAP theorem`
     1. CA - Relational DBs - mysql, oracle
     2. CP - Google's Big table, mongodb, Hbase, memcached, redis
     3. AP - Couchdb, cassandra, dynamodb, voldemort, riak, simpledb
 
-28. **`Distributed transactions - ACID`**
+28. #### `Distributed transactions - ACID`
     1. Atomic - either all the changes of the transaction work or none
     2. Consistent - after transaction completion, the database is left in a valid state
     3. Isolated - concurrent transaction leaves the database in the same state that would have been obtained if the transactions were executed sequentially
@@ -257,12 +257,12 @@
         2. retry
         3. compensating action
 
-29. **`Distributed consensus`**
+29. #### `Distributed consensus`
     1. Paxos → quorum (read) → prepare, promise, accept request, acceptance (write, proposer-acceptor)
     2. Raft
     3. blockchain (can handle liars)
 
-30. **`Tips:`**
+30. #### `Tips:`
     1. Timeouts
     2. Circuit breakers
     3. let it crash, error handling
