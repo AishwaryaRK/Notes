@@ -46,16 +46,16 @@
 ### Performance analysis commands:
 
 1. #### uptime [resource demand] → load avg
-    - moving sum averages with a 1 minute, 5 minute, and 15 minute constant.
+   - moving sum averages with a 1 minute, 5 minute, and 15 minute constant.
 ```
         $ uptime 
         23:51:26 up 21:31, 1 user, load average: 30.02, 26.43, 19.02
 ```
 2. #### dmesg | tail [error]
-    - display system message buffer, last 10 system messages
+   - display system message buffer, last 10 system messages
 
 3. #### vmstat 1 [resource demand] → r(procs), free, si, so, buff, cache(mem), us,sy(cpu)
-    - virtual memory stat
+   - virtual memory stat
  ```      
         $ vmstat 1
         procs -----------memory----------   ---swap-- -----io----  -system-- ------cpu-----
