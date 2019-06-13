@@ -56,7 +56,7 @@
     2. Disk: PATA, SATA, SAS, SSD, RAID
     3. RAM
 
-2. #### `Horizontal scaling`** - clon
+2. #### `Horizontal scaling` - clones
 
 3. #### `Load balancing`
     1. High availability
@@ -99,11 +99,11 @@
         1. CDN → overlay n/w → IP n/w (IP addr) is an overlay on LAN (MAC addr) → CDN (Node ID) is an overlay on TCP/IP (IP addr)
         2. coral key-based routing
 
-6. #### `Sessions-cookies`** → multiple servers don't store state in their hard drive but in a global shared storage(fs,db) or in Load balancer → but then this shared storage or load balancer becomes bottleneck, SPOF → storing server hash in cookie for load balancer to send the req of a particular session to the same server → RAID → sharding, replication
+6. #### `Sessions-cookies` → multiple servers don't store state in their hard drive but in a global shared storage(fs,db) or in Load balancer → but then this shared storage or load balancer becomes a bottleneck, SPOF → storing server hash in cookie for load balancer to send the req of a particular session to the same server → RAID → sharding, replication
 
 7. Platform layer b/w application and db. Platform server is more I/O intensive (needs SSD) and application server is more cpu intensive for compute. Product agnostic platform interface.
 
-8. #### `DB`*
+8. #### `DB` 
     1. out of space → archive data
     2. denormalization - no joins in db queries - app does the dataset-joins
     3. sql tuning
@@ -161,11 +161,11 @@
     13. sharding based on ID(user/entity), creation time, (creation time epoch + auto inc ID)
     14. locations across the world → location QuadTree
 
-12. #### `Federation`** - functional partitioning - splits up databases by functio
+12. #### `Federation` - functional partitioning - splits up databases by function.
 
 13. Reed-Solomon encoding to distribute and replicate data.
 
-14. #### `Map-Reduce / Scatter-Gather`** → hadoop [batch processing, HDFS, Hive] / Spark [RDD, batch/stream processing] / Apache Storm [streaming data processing] / lambda architecture [batch/streaprocessing] / flink
+14. #### `Map-Reduce / Scatter-Gather` → hadoop [batch processing, HDFS, Hive] / Spark [RDD, batch/stream processing] / Apache Storm [streaming data processing] / lambda architecture [batch/stream processing] / flink
 
 15. Geographically distributed data centres - availability zones
 
@@ -185,7 +185,7 @@
     3. tcp db-port → db
     4. IP blacklisting and whitelisting
 
-19. #### `Being asynchronous`** → loosely coupling subsyste
+19. #### `Being asynchronous` → loosely coupling subsystems
     1. precomputing
     2. signal/event/callback
     3. messaging
@@ -225,7 +225,7 @@
     5. Facilitates Replication and partitioning of data across servers
     6. relieves hot spots
 
-25. #### `Eventual consistency`** - distributed computi
+25. #### `Eventual consistency` - distributed computing
     1. gives high availability → all nodes are always available to be read but some nodes may have stale data at a particular point of time
     2. lower latency
     3. read scalability
