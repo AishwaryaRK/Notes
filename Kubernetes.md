@@ -91,9 +91,6 @@
 2. [rbac 1](https://medium.com/@lestrrat/configuring-rbac-for-your-kubernetes-service-accounts-c348b64eb242)
 3. [rbac 2](https://medium.com/uptime-99/making-sense-of-kubernetes-rbac-and-iam-roles-on-gke-914131b01922)
 4. [deploy postgresql](https://severalnines.com/blog/using-kubernetes-deploy-postgresql)
-
-    /code
-
 5. [helm 1](https://www.nclouds.com/blog/simplify-kubernetes-deployments-with-helm-part-1/)
 6. [helm 2](https://www.nclouds.com/blog/simplify-kubernetes-deployments-helm-part-2/)
 7. [accessing pods from outside of the cluster](http://alesnosek.com/blog/2017/02/14/accessing-kubernetes-pods-from-outside-of-the-cluster/)
