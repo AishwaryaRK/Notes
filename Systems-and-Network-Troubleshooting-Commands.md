@@ -230,7 +230,7 @@
     _hidd  99   0.1  0.0  4380568   5024   ??  Ss   Fri10AM   6:01.77 /usr/libexec/hidd
 ```
 
-![](http://www.brendangregg.com/Perf/linux_observability_tools.png "Brendan Gregg - linux_observability_tools")
+![Brendan Gregg - linux_observability_tools](http://www.brendangregg.com/Perf/linux_observability_tools.png "Brendan Gregg - linux_observability_tools")"Brendan Gregg - linux_observability_tools"
 
 ### Other observability commands:
 
