@@ -1,6 +1,6 @@
 # Knife Commands
 
-Common cmds:
+### Common cmds:
 
     knife node list
     knife node show
@@ -12,19 +12,19 @@ Common cmds:
     knife role show
     Knife role list
 
-data bag:
+### data bag:
 
     knife data bag show mysql
 
-search nodes:
+### search nodes:
 
     knife search "tags:tag1\:val1 AND run_list:recipe\\[cookbook_name\:\:recipe_name\\]"
 
-bootstrap:
+### bootstrap:
 
     knife bootstrap <ip> -E <env_production> -N <node_name> -x <user> --sudo -r "recipe[r1]" --bootstrap-version <chef_version>
 
-Edit/Add chef attributes on multiple nodes:
+### Edit/Add chef attributes on multiple nodes:
 
     #add tag
     knife exec -E 'nodes.transform("name:abc-*") {|n| puts n.tags.add("name:key"); n.save}'
@@ -32,7 +32,7 @@ Edit/Add chef attributes on multiple nodes:
     #add a recipe to run list
     knife exec -E 'nodes.transform("name:abc-*") {|n| puts n.run_list << "recipe[cookbook_name::recipe_name]"; n.save }'
 
-Run chef-client on multiple nodes:
+### Run chef-client on multiple nodes:
 
     knife ssh 'chef:query' 'sudo chef-client -o recipe[a::b]' -x <user_name> -a ipaddress
     
