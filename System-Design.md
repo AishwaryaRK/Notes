@@ -50,7 +50,7 @@
 
 ### Scalability Principles:
 
-1. `Vertical scaling`
+1. *`Vertical scaling`*
     1. CPU: cores, L2 cache
     2. Disk: PATA, SATA, SAS, SSD, RAID
     3. RAM
