@@ -1,6 +1,6 @@
 # LINUX
 
-Data manipulation/formatting:
+### Data manipulation/formatting:
 
      1: ls -al | head -n 5
      2: ls -al | tail -n 5
@@ -20,31 +20,31 @@ Data manipulation/formatting:
     
     head -n 5 file1
 
-while `cut` understands only single symbol (space in our case) as a way to tell field apart (field separator), `awk` treats any number of spaces and tabs as filed separator, so there is no need to use `tr` which removes unnecessary spaces.
+- while `cut` understands only single symbol (space in our case) as a way to tell field apart (field separator), `awk` treats any number of spaces and tabs as filed separator, so there is no need to use `tr` which removes unnecessary spaces.
 
-`sed` is one powerful stream editor
+- `sed` is one powerful stream editor
 
 - for any debugging:  `-v -vvv`
 
-join:
+### join:
 
     #Join command combines lines from two files based on a common field.
     # like DB join
     join file1.txt file2.txt
 
-translate:
+### translate:
 
     # change to uppercase tr cmd
     tr a-z A-Z < employee.txt
 
-xargs:
+### xargs:
 
     #xargs
     sort a| uniq | xargs -I{} sh -c 'grep {} a | wc -l; echo {}'
     k get pods |grep proctor| grep Err | awk '{print $1}'| xargs -I{} kubectl delete po {}
     docker ps | grep app | awk '{ print $1 }' | xargs -I{} docker kill {}
 
-sort:
+### sort:
 
     #sort
     sort file1
@@ -58,7 +58,7 @@ sort:
     ls -al | sort +4n #sort by file size
     ls -al | sort +4nr
 
-uniq:
+### uniq:
 
     #uniq
     #used in combination with sort command, 
@@ -72,7 +72,7 @@ uniq:
       #2 Alex Jason:200:Sales
     sort namesd.txt | uniq –cd  #display only duplicate row
 
-cut:
+### cut:
 
     cut -d: -f 1,3 file1     #file delimited by `:`, display field 1 and 3
     cut -c 1-8 file1         #display first 8 chars of every line
@@ -80,7 +80,7 @@ cut:
     #Displays the total memory available on the system.
     free | tr -s ' ' | sed '/^Mem/!d' | cut -d" " -f2
 
-grep:
+### grep:
 
     grep [options] pattern [files]
     
@@ -93,7 +93,7 @@ grep:
     -l == show only file name
     
 
-find:
+### find:
 
     find [pathnames] [conditions]
     
@@ -117,7 +117,7 @@ find:
      3: cp -v .bash_history{,1}
      4: ls .*
 
-local & global env vars for terminals:
+### local & global env vars for terminals:
 
     1: foo='Hello World!'   #local to terminal
     3: set | grep foo
@@ -125,11 +125,11 @@ local & global env vars for terminals:
     5: export foo           #global
     6: env | grep foo
 
-random numbers:
+### random numbers:
 
     echo $RANDOM
 
-Redirection:
+### Redirection:
 
      1: sudo aptitude install pv
      2: read foo < /dev/tty
@@ -150,7 +150,7 @@ Redirection:
 
 pv(pipe viewer) shows you a progress of reading the file
 
-tee:
+### tee:
 
 Tee command is used to store and view (both at the same time) the output of any other command.
 
@@ -158,7 +158,7 @@ Tee command writes to the STDOUT, and to a file at a time
 
     $ ls | tee file
 
-fg & bg jobs:
+### fg & bg jobs:
 
      1: less -S .profile
      2: <CTRL+z>
@@ -171,12 +171,12 @@ fg & bg jobs:
      9: q
     10: jobs       # list background jobs
 
-exit code:
+### exit code:
 
     1: ls
     2: echo $?
 
-searching documentation:
+### searching documentation:
 
     1: man -k . 
     2: man -k [search string] 
@@ -184,7 +184,7 @@ searching documentation:
 
 arch linux
 
-Runlevels:
+### Runlevels:
 
       S:	This executed then system is powered on.
       0:	Halt, this defines which actions are executed when system is shutting down.
@@ -192,7 +192,7 @@ Runlevels:
     2-5:	Full Multi-User, configured daemon start in this mode.
       6:	Reboot. Like halt, but instead of powering down system reboots.
 
-rcconf package which allows you to easily manage runlevels:
+### rcconf package which allows you to easily manage runlevels:
 
      1: sudo aptitude install rcconf
      2: ls -al /etc/rc2.d
@@ -206,7 +206,7 @@ rcconf package which allows you to easily manage runlevels:
 
 Daemon — a program which runs in background all the time. This means that it does not care if you are logged into the system, and usually you do not need to start it manually, because daemons are started automatically when computer boots up.
 
-Signals:
+### Signals:
 
        0:  Exit
      HUP:  Hangup
@@ -222,7 +222,7 @@ Signals:
     PIPE:  Broken
     ALRM:  Timer
 
-Process:
+### Process:
 
     #process status
     ps auxe --forest
@@ -231,7 +231,7 @@ Process:
     
     # a == all users
     # x == include processes which do not have a controlling terminal 
-    # u == udisplay the processes belonging to the specified usernames.
+    # u == display the processes belonging to the specified usernames.
     
     ps U <user>  #processes owned by a user
     ps U $USER   #processes owned by current user
@@ -245,7 +245,7 @@ Process:
      4: kill -s TERM $!
      5: <ENTER>
 
-Cron:
+### Cron:
 
     # min   hr    day-of-month   month-of-year   day-of-week
     # 0-59  0-23  1-31           1-12            0-6(0==sunday)
@@ -275,11 +275,19 @@ logrotate daemon
     last     # Prints out information about last logins of users.
     lastlog  # Prints out information about the most recent logins of all users.
 
-filesystem, mounting, mountpoint:
+### filesystem, mounting, mountpoint:
 
-fdisk to create and modify partitions on disk
+- fdisk to create and modify partitions on disk
 
-fstab - file system table
+- fstab - file system table
+
+- Steps:
+
+1. physically attach a disk to m/c
+2. create partitions in the disk - fdisk
+3. create file system in each partition of the disk - mkfs
+4. get block ID for the file system created - blkid, lsblk
+5. attach/mount the file system to the mounting point - mount
 
     mount     # /dev/vda5 on / type ext3 (rw,errors=remount-ro)
     cat /etc/fstab
@@ -297,6 +305,7 @@ fstab - file system table
     
     fsck /tmp    # check partition for errors.
     
+    lsblk
     blkid        # print out unique partition identifiers. UUID
     
     fdisk /dev/sda     # p d n p w
@@ -310,18 +319,27 @@ fstab - file system table
     vim /etc/fstab. 
     #(UUID="b1473cac-a9dc-4adf-af1c-3cb1c21cc94e" /var/lib/postgresql ext4   defaults        0 2)
     mount -a
-    df -h .  #list devices/partitions
-    df #disk usage
+    df -h .  # file system capacity #list devices/partitions
+    df       #free disk statistics
+    
+    #If the disk space isn't close to 100% then see the inodes usage status
+    df -i
+    
+    du -sch | grep G      #disk usage statistics
+    #See the disk usage for files and directories, 
+    #and trace the directory consuming maximum disk space.
+    du -kh -d 1 /
+    du -kh -d 1 /var/logs
+    
     
     tune2fs -l /dev/sda8  # print out and change file system parameters.
-    
 
-filesystem stats/status/properties:
+### filesystem stats/status/properties:
 
     stat file1    #statistics
     stat -f /     #filesystem status
 
-tar:
+### tar:
 
     tar -czvf root.tgz /opt/root/
     # c == compress
@@ -336,7 +354,7 @@ tar:
     tar -xzvf ~/root.tgz
     # x == extract to disk from archive
 
-zip:
+### zip:
 
     zip compressed-file-name.zip /var/log/*
     zip -r compressed-file-dir.zip /var/log/
@@ -349,12 +367,12 @@ zip:
     
     unzip -l var-log.zip #list zipped file content
 
-File permission classes: `user`, `group`, `others`
+### File permission classes: `user`, `group`, `others`
 
-permissions: `r,w,x`
+- permissions: `r,w,x`
 
-`owner`(r,w,x)`group`(r,w,x)`others`(r,w,x)
-
+- `owner`(r,w,x)`group`(r,w,x)`others`(r,w,x)
+```
     chown
     chmod
     umask
@@ -366,8 +384,8 @@ permissions: `r,w,x`
     chgrp <grp> /home/john/sample.txt  # change group ownership of a file.
     chgrp -R <grp> dir/
     chgrp --reference=file2 file1
-
-Networking:
+```
+### Networking:
 
     1. ifconfig
     2. ip, ip route show
@@ -385,16 +403,22 @@ Networking:
     echo 'Hello, world!' | nc localhost 80
     
 
-File transfer:
+### File transfer:
 
     netcat -l -p <port> > file.pdf            #sender m/c
     netcat $SENDER_IP_ADDRESS <port> < file.pdf   #receiver m/c
 
-DNS configuration:
+### DNS configuration:
 
     scutil --dns
+    
+    resolve.conf
 
-Secure shell:
+### proc:
+
+    tail -f /proc/PID/fd/1
+
+### Secure shell:
 
     ssh # client program which allows you to connect to ssh server. 
     		#Putty is such client program for example.
@@ -409,7 +433,7 @@ Secure shell:
     sshfs # remote filesystem mounting over ssh.
     ssh tunnelling # a method to transfer almost any data over secure connection. 
 
-Toggle ssh session:
+### Toggle ssh session:
 
     #remotehost
     ~^Z      # escape char ~  +   (ctrl+Z)
@@ -419,7 +443,7 @@ Toggle ssh session:
     
     fg %1
 
-ssh statistics:
+### ssh statistics:
 
     #remotehost, only works on SSH2 client.  
     
@@ -449,7 +473,7 @@ ssh statistics:
             MAC: hmac-sha1
             Compression: zlib`
 
-logging:
+### logging:
 
     dmesg             # print or control the kernel ring buffer
     /var/log/dmseg    # log file which contains copy of dmesg messages 
@@ -464,13 +488,13 @@ logging:
                       # Contains /var/log/dmesg, /var/log/messages and /var/log/kern.log
     /var/log/auth
 
-suppress stdout and stderr:
+### suppress stdout and stderr:
 
     ./shell-script.sh > /dev/null          # supress err and stdout
     ./shell-script.sh 2> /dev/null         # supress err
     30 1 * * * command > /dev/null 2>&1    # supress err and stdout
 
-performance:
+### performance:
 
 1. uptime
 2. free
@@ -479,9 +503,10 @@ performance:
 5. iostat
 6. iotop
 7. perf
-```
+
     uptime       # how long the system has been running.
     # 03:13:58 up 4 days, 22:45,  1 user,  load average: 0.00, 0.00, 0.00
+    w #users, load avg
     
     free         # display amount of free and used memory in the system.
     # Mem:   total       used       free     shared    buffers     cached
@@ -533,13 +558,11 @@ performance:
     # TLB misses
     # branch prediction misses
 
-```
-
 lsof - ls open files:
 
 list all the open files in the system
 
-open files → network connection, devices and directories
+open files → network connection, devices and directories, files
 
     look <prefix>
     
@@ -557,7 +580,7 @@ open files → network connection, devices and directories
     stat <file> 
     touch <file> # used to change the timestamps(access, modify and change) of a file.
 
-Http/Https
+### Http/Https:
 
     check_http -H 192.162.1.50 -p 8080     # check status of remote HTTP server
     check_http -H 192.164.1.50 -S -p 8443  # check status of remote HTTPS server
@@ -568,7 +591,7 @@ Http/Https
     check_ping
     check_ftp
 
-file checksum:
+### file checksum:
 
     # cksum computes a cyclic redundancy check (CRC) checksum for files
     # and counts the number of bytes of a file.
@@ -583,38 +606,40 @@ file checksum:
     md5sum sample.txt
     #3b85ec9ab2984b91070128be6aae25eb  samplefile.txt
 
-diff b/w files:
+### diff b/w files:
 
     diff file1 file2
     diff -w file1 file2  #ignore whitespace
 
-cd:
+### cd:
 
     export CDPATH=.:~:/etc:/var
     
 
-users' connect time:
+### users' connect time:
 
     ac –d        #per day
     ac -p        #per user
     ac -d user1  #for specific user per day
 
-Systemcalls:
+### Systemcalls:
 
 [http://asm.sourceforge.net/syscall.html](http://asm.sourceforge.net/syscall.html)
 
-kernel module:
+### kernel module:
 
 [https://www.thegeekstuff.com/2013/07/write-linux-kernel-module/](https://www.thegeekstuff.com/2013/07/write-linux-kernel-module/)
 
     lsmod  # lists loaded kernel modules
 
-resolving dns name:
+### resolving dns name:
 
     dig dns_name/IP
     host dns_name/IP
     
     dig +trace dns_name/IP
+    
+    scutil
 
 /etc/nsswitch.conf → contains order in which lookups are performed (files and dns)
 
@@ -630,7 +655,7 @@ Test availability of remote service:
 
 ping
 
-netcat nc/ncat:
+### netcat nc/ncat:
 
     nc -l <port>  #starts a server listening at port [listener mode]
     nc <ip> <port>   #opens a connection with remote server
@@ -640,7 +665,7 @@ netcat nc/ncat:
     #Making any process a server
     nc -l -p 1234 -e /bin/sh
 
-nmap:
+### nmap:
 
     nmap -n <network>         # scan network - available nodes, IPs, listening ports,
     nmap -n 192.12.4.0/24			#	mac address
@@ -656,7 +681,7 @@ memory leak → program keeps on claiming memory w/o returning it
 
 /proc/meminfo
 
-tcpdump:
+### tcpdump:
 
     tcpdump port 8997 -w service.pcap  # packet capture
     # -w -> file
@@ -680,7 +705,7 @@ tcpdump:
     # -e -> shows ethernet info. like MAC addr
     # -p -> packets that are to or from your m/c
 
-tcpdump o/p:
+### tcpdump o/p:
 
 1. src+dest ip addr and port
 2. timestamp
@@ -692,12 +717,12 @@ tcpdump o/p:
 
 tcpdump uses BPF language to filter packets
 
-BPF filters:
+### BPF filters:
 
 1. port, host → src
 2. and, or, not
 
-Performance:
+### Performance:
 
 1. RAM/memory
     1. top
@@ -714,7 +739,7 @@ Performance:
 4. cpu
     1. top
 
-Systems troubleshooting:
+### Systems troubleshooting:
 
 1. glances
 2. htop/top
@@ -745,7 +770,7 @@ Systems troubleshooting:
 18. perf
 19. ltrace → trace library calls
 
-Network troubleshooting:
+### Network troubleshooting:
 
 1. iptraf → IP traffic
 2. ping -c 3 <host> → are the computers connected
@@ -769,7 +794,7 @@ Network troubleshooting:
 20. sysctl → configure socket buffer sizes and more
 21. ethtool → ethernet connections
 
-Resources:
+### Resources:
 
 [http://dbp-consulting.com/tutorials/debugging/linuxProgramStartup.html](http://dbp-consulting.com/tutorials/debugging/linuxProgramStartup.html)
 
