@@ -167,7 +167,7 @@
 ```
 - rxkB/s and txkB/s
 
-  #### sar 1 [resource demand]
+#### sar 1 [resource demand]
 
 - CPU stats
 ```
@@ -213,7 +213,7 @@
 
 10. #### ps -ef f  → PID, command
 ```
-process stats
+#### process stats
 ```
     $ ps
     
@@ -221,7 +221,7 @@ process stats
         0     1     0   0 Fri10AM ??         5:28.81 /sbin/launchd
         0    42     1   0 Fri10AM ??         0:04.29 /usr/sbin/syslogd
 ```
- ps auxe [resource demand]
+#### ps auxe [resource demand]
 ```
     $ ps auxe
     
