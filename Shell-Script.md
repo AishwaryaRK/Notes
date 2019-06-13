@@ -1,6 +1,6 @@
 # Shell script
 
-var, echo, parameter expansion
+### var, echo, parameter expansion
 
     a="abc"
     b=1
@@ -18,7 +18,7 @@ var, echo, parameter expansion
     #default value
     name:="abc"
 
-function
+### function
 
     f1(){
     	local a=1
@@ -39,7 +39,7 @@ function
     n2=2
     sum=$(f2 n1 n2)
 
-stdin
+### stdin
 
     read -p "what is your name?" name     # -p i/p promt 
     echo $name
@@ -49,7 +49,7 @@ stdin
     IFS=","   #delimiter #i/p=1,2,3
     read -p "enter numbers" n1 n2
 
-command line args
+### command line args
 
     # $1->
     echo "1st arg: $1"
@@ -63,7 +63,7 @@ command line args
     	shift
     done
 
-conditionals
+### conditionals
 
     if [ $age -ge 16 ]    # -ge -> >=
     then 
@@ -101,7 +101,7 @@ conditionals
     # [ "$str1" > "$str2" ]
     
 
-files
+### files
 
     file1="./test_file1"
     
@@ -138,7 +138,7 @@ files
     # Emma Thomas:100:Marketing
     # Alex Jason:200:Sales
 
-regex
+### regex
 
     read -p "enter date:" date
     
@@ -147,7 +147,7 @@ regex
     	echo "valid"
     fi
 
-switch case
+### switch case
 
     case $age in
     [0-4])
@@ -164,11 +164,11 @@ switch case
     		;;
     esac
 
-ternary operators
+### ternary operators
 
     (( age > = 18 ? (can_vote=1) : (can_vote=0) ))
 
-string
+### string
 
     #length
     ${#str1}
@@ -180,7 +180,7 @@ string
     ${str#*ab}   #"cdefg" -> everything after substr "ab"
     
 
-loop
+### loop
 
     num=1
     while [ $num -le 10 ]; do
@@ -211,7 +211,7 @@ loop
     	echo $i
     done
 
-array
+### array
 
     arr=(1 2 3)
     echo ${arr[1]}
@@ -225,6 +225,6 @@ array
     	echo $i;
     done | sort))
 
-debugging
+### debugging
 
     set -xv
