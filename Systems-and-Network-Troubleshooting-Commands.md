@@ -13,7 +13,7 @@
     1. errors
     2. saturation metrics
     3. resource utilization
-
+```
         uptime
         
         dmesg | tail
@@ -37,7 +37,7 @@
         top
         
         ps
-
+```
 2. Process of elimination
     1. processes wanting to run on CPU
     2. processes blocked in uninterruptible I/O (usually disk I/O). 
@@ -47,22 +47,22 @@
 
 1. #### uptime [resource demand] → load avg
     - moving sum averages with a 1 minute, 5 minute, and 15 minute constant.
-
+```
         $ uptime 
         23:51:26 up 21:31, 1 user, load average: 30.02, 26.43, 19.02
-
+```
 2. #### dmesg | tail [error]
     - display system message buffer, last 10 system messages
 
 3. #### vmstat 1 [resource demand] → r(procs), free, si, so, buff, cache(mem), us,sy(cpu)
     - virtual memory stat
-
+ ```      
         $ vmstat 1
         procs -----------memory----------   ---swap-- -----io----  -system-- ------cpu-----
          r  b   swpd   free   buff  cache     si   so    bi    bo   in   cs   us sy id wa st
          2  0      0 4166832  69240 2006276    0    0  6898  3442  1349 2336  11  6 81  2  0
          1  0      0 4166708  69240 2006268    0    0     0   728  2796 7387   1  1 98  0  0
-
+```
     - procs r
         - runnable tasks
         - Number of processes running on CPU and waiting for a turn
@@ -83,7 +83,7 @@
     - CPU time breakdowns per CPU
     - used to check for an imbalance.
     - A single hot CPU can be evidence of a single-threaded application.
-
+```
         $ mpstat -P ALL 1
         
         15:49:51     CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
@@ -97,13 +97,13 @@
         15:49:53       0    1.03    0.00    5.15    0.00    0.00    0.00    0.00    0.00    0.00   93.81
         15:49:53       1    2.02    0.00    4.04    0.00    0.00    0.00    0.00    0.00    0.00   93.94
         15:49:53       2    2.06    0.00    2.06    1.03    0.00    0.00    0.00    0.00    0.00   94.85
+ ```
         
-
 5. #### pidstat 1 / top [resource demand]
 
 - per-process summary
 - processes as responsible for consuming CPU.
-
+```
     $ pidstat 1
     
     07:41:02 PM   UID       PID    %usr %system  %guest    %CPU   CPU  Command
@@ -112,12 +112,12 @@
     07:41:03 PM     0      4354    0.94    0.94    0.00    1.89     8  java
     07:41:03 PM     0      6521 1596.23    1.89    0.00 1598.11    27  java
     07:41:03 PM     0      6564 1571.70    7.55    0.00 1579.25    28  java
-
+```
 6. #### iostat -xz 1 [resource demand] → r/s, w/s, rkB/s, wkB/s, avgqu-sz, await, svctm, %util
 
 - poor performing disk I/O isn’t necessarily an application issue.
 - Many techniques are typically used to perform I/O asynchronously, so that the application doesn’t block and suffer the latency directly (e.g., read-ahead for reads, and buffering for writes).
-
+```
     $ iostat -xz 1
         
     avg-cpu:  %user   %nice %system %iowait  %steal   %idle
@@ -127,7 +127,7 @@
     sda               0.04     4.58    8.98   12.95   412.66   330.32    67.76     0.04    1.74    0.35    2.71   0.50   1.09
     scd0              0.00     0.00    0.93    0.00    74.85     0.00   160.87     0.00    0.61    0.61    0.00   0.43   0.04
     scd1              0.00     0.00    0.00    0.00     0.02     0.00    34.29     0.00    0.00    0.00    0.00   0.00   0.00
-
+```
 - r/s, w/s, rkB/s, wkB/s - reads, writes, read Kbytes, and write Kbytes per second to the device
 - await - The average time for the I/O in milliseconds. This is the time that the application suffers, as it includes both time queued and time being serviced. Larger than expected average times can be an indicator of device saturation, or device problems.
 - avgqu-sz - The average number of requests issued to the device. Values greater than 1 can be evidence of saturation
@@ -139,7 +139,7 @@
 - buffers - used for (block device) I/O
 - cache - page cache, used by file systems.
 - near-zero in size, which can lead to higher disk I/O (confirm using iostat), and worse performance
-
+```
     $ free -m
     
                 total       used        free      shared    buffers     cached
@@ -147,7 +147,7 @@
     
     -/+ buffers/cache:      23944     222053
     Swap:                   0          0          0
-
+```
 8. #### sar -n DEV 1 [resource demand]
 
 - system activity
@@ -158,30 +158,30 @@
     - IP(IP traffic)
     - TCP(TCP traffic)
     - ETCP(TCP traffic errors)
-
+```
     $ sar -n DEV 1
     
     06:24:29 AM     IFACE   rxpck/s   txpck/s    rxkB/s    txkB/s   rxcmp/s   txcmp/s  rxmcst/s   %ifutil
     06:24:30 AM        lo      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00
     06:24:30 AM      ens4      4.95      1.98      0.30      0.23      0.00      0.00      0.00      0.00
-
+```
 - rxkB/s and txkB/s
 
      sar 1 [resource demand]
 
 - CPU stats
-
+```
     $ sar 1
     
     06:19:27 AM     CPU     %user     %nice   %system   %iowait    %steal     %idle
     06:19:28 AM     all      0.00      0.00      0.00      0.00      0.00    100.00
     06:19:29 AM     all      0.00      0.00      0.00      0.00      0.00    100.00
     06:19:30 AM     all      0.00      0.00      0.00      0.00      0.00    100.00
-
+```
 #### sar -n TCP,ETCP 1 [resource demand]
 
 - TCP metrics
-
+```
     $ sar -n TCP,ETCP 1
     
     08:18:50 AM  active/s passive/s    iseg/s    oseg/s
@@ -189,13 +189,13 @@
     
     08:18:50 AM  atmptf/s  estres/s retrans/s isegerr/s   orsts/s
     08:18:51 AM      0.00      0.00      0.00      0.00      1.00
-
+```
 - active/sec - Number of locally-initiated TCP connections per second (e.g., via connect()).
 - passive/sec - Number of remotely-initiated TCP connections per second (e.g., via accept()).
 - retrans/sec - Number of TCP retransmits per second. Sign of a network or server issue
 
 9. #### top/htop [resource demand] → %cpu, command
-
+```
     $ top
     
     Processes: 380 total, 2 running, 378 sleeping, 1970 threads                                                                                                                                            14:21:15
@@ -212,22 +212,23 @@
     2787  ocspd        0.0  00:00.04 2     1    34    1772K  0B     0B     2787 1    sleeping *0[1]          0.00000 0.00000    0    3023      168     883       193       985       2454     400       0
 
 10. #### ps -ef f  → PID, command
-
+```
 process stats
-
+```
     $ ps
     
       UID   PID  PPID   C STIME   TTY           TIME CMD
         0     1     0   0 Fri10AM ??         5:28.81 /sbin/launchd
         0    42     1   0 Fri10AM ??         0:04.29 /usr/sbin/syslogd
-
+```
  ps auxe [resource demand]
-
+```
     $ ps auxe
     
     USER  PID  %CPU  %MEM    VSZ    RSS   TT  STAT  STARTED      TIME   COMMAND
     root  103   0.1  0.0  4350288   2072   ??  Ss   Fri10AM   0:47.83 /usr/sbin/notifyd
     _hidd  99   0.1  0.0  4380568   5024   ??  Ss   Fri10AM   6:01.77 /usr/libexec/hidd
+```
 
 ![](http://www.brendangregg.com/Perf/linux_observability_tools.png "Brendan Gregg - linux_observability_tools")
 
