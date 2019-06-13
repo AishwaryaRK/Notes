@@ -1,5 +1,5 @@
 # System boot process
-
+```
 YOU
         Press power switch (or start a virtual machine)
         Now computer has the control
@@ -40,3 +40,4 @@ YOU
         SSH daemon executes bash shell for you
         You can now type stuff
         You are in control once again
+ ```
