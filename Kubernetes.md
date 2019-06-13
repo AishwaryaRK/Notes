@@ -1,21 +1,5 @@
 # Kubernetes
 
-### Resources
-
-1. [Networking](https://sookocheff.com/post/kubernetes/understanding-kubernetes-networking-model/)
-2. [rbac 1](https://medium.com/@lestrrat/configuring-rbac-for-your-kubernetes-service-accounts-c348b64eb242)
-3. [rbac 2](https://medium.com/uptime-99/making-sense-of-kubernetes-rbac-and-iam-roles-on-gke-914131b01922)
-4. [deploy postgresql](https://severalnines.com/blog/using-kubernetes-deploy-postgresql)
-
-    /code
-
-5. [helm 1](https://www.nclouds.com/blog/simplify-kubernetes-deployments-with-helm-part-1/)
-6. [helm 2](https://www.nclouds.com/blog/simplify-kubernetes-deployments-helm-part-2/)
-7. [accessing pods from outside of the cluster](http://alesnosek.com/blog/2017/02/14/accessing-kubernetes-pods-from-outside-of-the-cluster/)
-8. [external dns](https://medium.com/@marekbartik/google-kubernetes-engine-with-external-dns-on-cloudflare-provider-24beb2a6b8fc)
-9. [external dns issue](https://github.com/kubernetes-incubator/external-dns/issues/262)
-10. [ssl](https://docs.bitnami.com/kubernetes/how-to/secure-kubernetes-services-with-ingress-tls-letsencrypt/)
-
 
 ### Helm cmds:
 
@@ -99,3 +83,21 @@
     kubectl rollout undo deployment/helloworld-deployment --to-revision=n
 
     kubectl get events -w
+    
+
+### Resources
+
+1. [Networking](https://sookocheff.com/post/kubernetes/understanding-kubernetes-networking-model/)
+2. [rbac 1](https://medium.com/@lestrrat/configuring-rbac-for-your-kubernetes-service-accounts-c348b64eb242)
+3. [rbac 2](https://medium.com/uptime-99/making-sense-of-kubernetes-rbac-and-iam-roles-on-gke-914131b01922)
+4. [deploy postgresql](https://severalnines.com/blog/using-kubernetes-deploy-postgresql)
+
+    /code
+
+5. [helm 1](https://www.nclouds.com/blog/simplify-kubernetes-deployments-with-helm-part-1/)
+6. [helm 2](https://www.nclouds.com/blog/simplify-kubernetes-deployments-helm-part-2/)
+7. [accessing pods from outside of the cluster](http://alesnosek.com/blog/2017/02/14/accessing-kubernetes-pods-from-outside-of-the-cluster/)
+8. [external dns](https://medium.com/@marekbartik/google-kubernetes-engine-with-external-dns-on-cloudflare-provider-24beb2a6b8fc)
+9. [external dns issue](https://github.com/kubernetes-incubator/external-dns/issues/262)
+10. [ssl](https://docs.bitnami.com/kubernetes/how-to/secure-kubernetes-services-with-ingress-tls-letsencrypt/)
+
