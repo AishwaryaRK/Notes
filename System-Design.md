@@ -49,9 +49,8 @@
 5. serviceability / manageability
 
 ### Scalability Principles:
-<span style="color:blue">some *This is Blue italic.* text</span>
-<span style="color:red">text in red</span>
-1. Vertical scaling
+
+1. `Vertical scaling`
     1. CPU: cores, L2 cache
     2. Disk: PATA, SATA, SAS, SSD, RAID
     3. RAM
