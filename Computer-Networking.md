@@ -1,13 +1,13 @@
 # Computer Networking
 
-1. TCP/IP 5 layer n/w model
+###1. TCP/IP 5 layer n/w model
     1. physical → cables, connectors → bits
     2. data link → ethernet, wifi → frames → MAC addr
     3. network → IP → datagram → IP addr
     4. transport → tcp/udp → segment → ports
     5. application → http, smtp, messages
     
-2. Networking devices:
+###2. Networking devices:
     1. hub (physical layer, only 1 m/c can send data at a time → collision domain)
     2. switch (data link layer)
     3. router (network layer → BGP(border gateway protocol) → tells optimal path to the router for routing)
