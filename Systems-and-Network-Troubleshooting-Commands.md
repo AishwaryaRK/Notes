@@ -63,12 +63,12 @@
          2  0      0 4166832  69240 2006276    0    0  6898  3442  1349 2336  11  6 81  2  0
          1  0      0 4166708  69240 2006268    0    0     0   728  2796 7387   1  1 98  0  0
 ```
-    - procs r
+   - procs r
         - runnable tasks
         - Number of processes running on CPU and waiting for a turn
         - Saturation r > #CPUs
-    - free memory <free -m>
-    - si, so: Swap-ins and swap-outs
+   - free memory <free -m>
+   - si, so: Swap-ins and swap-outs
         - If these are non-zero, you’re out of memory.
     - CPU time breakdowns <>
         - us - user time
@@ -167,7 +167,7 @@
 ```
 - rxkB/s and txkB/s
 
-     sar 1 [resource demand]
+  #### sar 1 [resource demand]
 
 - CPU stats
 ```
