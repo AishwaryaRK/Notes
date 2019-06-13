@@ -16,7 +16,8 @@ Resources
 9. [external dns issue](https://github.com/kubernetes-incubator/external-dns/issues/262)
 10. [ssl](https://docs.bitnami.com/kubernetes/how-to/secure-kubernetes-services-with-ingress-tls-letsencrypt/)
 
-Helm cmds:
+
+### Helm cmds:
 
     helm install --debug --dry-run --name <app_name> --set <k>="<v>" -f values.yaml .
     
@@ -37,7 +38,7 @@ Helm cmds:
     
     helm push <repo>/<chart_name> <url>
 
-Kubernetes resources:
+### Kubernetes resources:
 
 1. deployment
 2. pod
@@ -60,7 +61,7 @@ Kubernetes resources:
 19. backendconfig
 20. serviceaccounts
 
-Kubectl cmds:
+### Kubectl cmds:
 
     kubectl get pods -n <namespace> <pod_name> -o yaml
     
