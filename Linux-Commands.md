@@ -117,6 +117,15 @@
      3: cp -v .bash_history{,1}
      4: ls .*
 
+    look <prefix>
+    
+    whereis ls    # find out where the binary, source, and man page files 
+                  # for a command is located.
+    whatis <cmd>  # displays a single line information about a command
+    
+    finger <user> # used to lookup information about an user
+                  # login, username, home directory, shell
+                  
 ### local & global env vars for terminals:
 
     1: foo='Hello World!'   #local to terminal
@@ -288,7 +297,7 @@ logrotate daemon
 3. create file system in each partition of the disk - mkfs
 4. get block ID for the file system created - blkid, lsblk
 5. attach/mount the file system to the mounting point - mount
-
+```
     mount     # /dev/vda5 on / type ext3 (rw,errors=remount-ro)
     cat /etc/fstab
     # <file system> <mount point>   <type>  <options>  <dump>  <pass>
@@ -333,7 +342,7 @@ logrotate daemon
     
     
     tune2fs -l /dev/sda8  # print out and change file system parameters.
-
+```
 ### filesystem stats/status/properties:
 
     stat file1    #statistics
@@ -503,7 +512,7 @@ logrotate daemon
 5. iostat
 6. iotop
 7. perf
-
+```
     uptime       # how long the system has been running.
     # 03:13:58 up 4 days, 22:45,  1 user,  load average: 0.00, 0.00, 0.00
     w #users, load avg
@@ -557,23 +566,16 @@ logrotate daemon
     # CPU cycles
     # TLB misses
     # branch prediction misses
+```
 
-lsof - ls open files:
+### lsof - ls open files:
 
-list all the open files in the system
+- list all the open files in the system
 
-open files → network connection, devices and directories, files
-
-    look <prefix>
+- open files → network connection, devices and directories, files
     
-    whereis ls    # find out where the binary, source, and man page files 
-                  # for a command is located.
-    whatis <cmd>  # displays a single line information about a command
-    
-    finger <user> # used to lookup information about an user
-                  # login, username, home directory, shell
-    
-    # split file into multiple files
+### split file into multiple files:
+
     split -l 1500 testfile <prefix>       # split file into 1500 lines files
     split --bytes=50M logdata <prefix>    # split file into 50MB files
     
@@ -641,17 +643,17 @@ open files → network connection, devices and directories, files
     
     scutil
 
-/etc/nsswitch.conf → contains order in which lookups are performed (files and dns)
+- /etc/nsswitch.conf → contains order in which lookups are performed (files and dns)
 
-/etc/host
+- /etc/host
 
-/etc/services → service-port mapping
+- /etc/services → service-port mapping
 
-processes listening on specific port:
+### processes listening on specific port:
 
     lsof -i :<port>
 
-Test availability of remote service:
+### Test availability of remote service:
 
 ping
 
@@ -675,11 +677,11 @@ ping
     
     # u == udp
 
-memory leak → program keeps on claiming memory w/o returning it
+### memory leak → program keeps on claiming memory w/o returning it
 
     top -o <key>   #sort by key
 
-/proc/meminfo
+- /proc/meminfo
 
 ### tcpdump:
 
@@ -715,7 +717,7 @@ memory leak → program keeps on claiming memory w/o returning it
     3. `R` → RST
 4. dns query → for dns packet
 
-tcpdump uses BPF language to filter packets
+- tcpdump uses BPF language to filter packets
 
 ### BPF filters:
 
