@@ -1,17 +1,22 @@
 # Google search tips
 
-**(screen | tmux) how to** 
 
-search for screen and tmux howtos at the same time. 
+### search for x and y howtos at the same time
+```
+(screen | tmux) how to 
+```
 
- **(site:serverfault.com | site:stackexchange.com) query** 
+### search something on this site only
+```
+(site:serverfault.com | site:stackexchange.com) query 
+```
 
- **search something on this site only.**
+### shows you only those pages which contain this query exactly
+```
+“a long query”
+```
 
-**“a long query”** 
-
-shows you only those pages which contain this query exactly.
-
-**-query** 
-
-excludes something from search results.
+### excludes something from search results
+```
+-query
+```
