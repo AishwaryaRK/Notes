@@ -43,6 +43,7 @@
     sort a| uniq | xargs -I{} sh -c 'grep {} a | wc -l; echo {}'
     k get pods |grep proctor| grep Err | awk '{print $1}'| xargs -I{} kubectl delete po {}
     docker ps | grep app | awk '{ print $1 }' | xargs -I{} docker kill {}
+    printf '%s\n' "${array[@]}" | xargs -I % curl -k -H "Content-Type: application/json" -H  "Authorization: token"  https://hostname.com/api/%
 
 ### sort:
 
