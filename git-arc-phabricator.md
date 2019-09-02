@@ -1,35 +1,35 @@
-# git + arc + phabricator
+#git + arc + phabricator
 
-new branch
+### new branch
 
     arc feature <<branch_name>>
 
 differential / diff == merge request
 
-rebase
+### rebase
 
     git fetch origin
     git rebase origin/master
 
-filter commit logs based on author
+### filter commit logs based on author
 
     git log --author="user_name"
 
-revert commit
+### revert commit
 
     arc feature <<branch_name>>
     git revert <<commit-id>>
     arc diff
 
-lint
+### lint
 
     arc lint
 
-test
+### test
 
     arc unit
 
-push + PR
+### push + PR
 
     arc diff
     arc diff --preview
@@ -37,13 +37,13 @@ push + PR
 - specify custom reviewers
 - summary of all the changes in the diff (like a PR description)
 
-merge to master
+### merge to master
 
     arc land
     
     arc patch
     arc diff --update <<Diff ID>>
 
-see your revisions pending for review
+### see your revisions pending for review
 
     arc list
