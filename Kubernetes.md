@@ -88,6 +88,12 @@
     
     kubectl run hello-world-api-server --image=docker-local.artifactory.twitter.biz/university/hello-world-api-server:v1 --port=8888
     
+    #Kubernetes Dashboard
+    kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
+    kubectl describe secret kubernetes-dashboard --namespace kube-system
+    kubectl proxy
+    open http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
+    
 
 ### Resources
 
