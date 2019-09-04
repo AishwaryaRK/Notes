@@ -84,6 +84,10 @@
 
     kubectl get events -w
     
+    kubectl scale --replicas=3 deployment/helloworld-deployment
+    
+    kubectl run hello-world-api-server --image=docker-local.artifactory.twitter.biz/university/hello-world-api-server:v1 --port=8888
+    
 
 ### Resources
 
