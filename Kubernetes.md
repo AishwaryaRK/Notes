@@ -94,6 +94,19 @@
     kubectl proxy
     open http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
     
+    #Rollout
+    #In deployment
+      strategy:
+        type: RollingUpdate
+        rollingUpdate:
+          maxUnavailable: 1
+          maxSurge: 1
+      
+    kubectl rollout status deployment hello-world-api-server-deployment
+    kubectl rollout history deployment hello-world-api-server-deployment
+    kubectl rollout undo deployment hello-world-api-server-deployment --to-revision=1
+    kubectl rollout status deployment hello-world-api-server-deployment
+    
 
 ### Resources
 
