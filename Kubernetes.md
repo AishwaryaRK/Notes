@@ -47,66 +47,73 @@
 
 ### Kubectl cmds:
 
+#### Pods
     kubectl get pods -n <namespace> <pod_name> -o yaml
     
     kubectl get pods --all-namespaces --selector=<k>=<v>
     
-    kubectl port-forward svc/<service_name> -n <namespace> 9090:9090
+    kubectl get pods --show-labels
     
+    kubectl edit pod -n <namespace> <pod_name>
+    
+#### Port forwarding
+    kubectl port-forward svc/<service_name> -n <namespace> 9090:9090
+
+#### Logs
     kubectl logs -f <pod> -c <container>
     
     kubectl describe deploy <deployment>
     
-    kubectl edit pod -n <namespace> <pod_name>
-    
-    kubectl get pods --show-labels
-    
-    #Expose the port of a pod (creates a new service)
-    kubectl expose pod <pod> --port=444 --name=frontend            
-    
-    #Execute a command on the pod
-    kubectl exec <pod> -- command
-    
-    #Add a new label to a pod
-    kubectl label pods/nodes <pod> mylabel=awesome  
-    
-    #Get deployment status
-    kubectl rollout status deployment/helloworld-deployment     
-    
-    #Get the rollout history
-    kubectl rollout history deployment/helloworld-deployment      
-    
-    #Rollback to previous version
-    kubectl rollout undo deployment/helloworld-deployment  
-    
-    #Rollback to any version version       
-    kubectl rollout undo deployment/helloworld-deployment --to-revision=n
-
+#### Event
     kubectl get events -w
     
-    kubectl scale --replicas=3 deployment/helloworld-deployment
+#### Expose the port of a pod (creates a new service)
+    kubectl expose pod <pod> --port=444 --name=frontend            
     
-    kubectl run hello-world-api-server --image=docker-local.artifactory.twitter.biz/university/hello-world-api-server:v1 --port=8888
+#### Execute a command on the pod
+    kubectl exec <pod> -- command
     
-    #Kubernetes Dashboard
-    kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
-    kubectl describe secret kubernetes-dashboard --namespace kube-system
-    kubectl proxy
-    open http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
-    
-    #Rollout
+#### Add a new label to a pod
+    kubectl label pods/nodes <pod> mylabel=awesome  
+ 
+#### Rollout
     #In deployment
       strategy:
         type: RollingUpdate
         rollingUpdate:
           maxUnavailable: 1
           maxSurge: 1
-      
+       
     kubectl rollout status deployment hello-world-api-server-deployment
     kubectl rollout history deployment hello-world-api-server-deployment
     kubectl rollout undo deployment hello-world-api-server-deployment --to-revision=1
     kubectl rollout status deployment hello-world-api-server-deployment
+          
+#### Get deployment status
+    kubectl rollout status deployment/helloworld-deployment     
     
+#### Get the rollout history
+    kubectl rollout history deployment/helloworld-deployment      
+    
+#### Rollback to previous version
+    kubectl rollout undo deployment/helloworld-deployment  
+    
+#### Rollback to any version version       
+    kubectl rollout undo deployment/helloworld-deployment --to-revision=n
+    
+#### Scaling    
+    kubectl scale --replicas=3 deployment/helloworld-deployment
+
+#### Run a app
+    kubectl run hello-world-api-server --image=docker-local.artifactory.twitter.biz/university/hello-world-api-server:v1 --port=8888
+    
+#### Kubernetes Dashboard
+    kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
+    kubectl describe secret kubernetes-dashboard --namespace kube-system
+    kubectl proxy
+    open http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
+    
+  
 
 ### Resources
 
