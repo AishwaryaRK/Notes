@@ -7,7 +7,7 @@
 3. [successintech](https://www.youtube.com/watch?v=0163cssUxLA&list=PLA8lYuzFlBqAy6dkZHj5VxUAaqr4vwrka)
 4. [interviewbit](https://www.interviewbit.com/courses/system-design/)
 5. [lecloud-scalability](http://www.lecloud.net/tagged/scalability)
-6. [consistent hashing](http://www.tomkleinpeter.com/2008/03/17/programmers-toolbox-part-3-consistent-hashing/)
+6. [consistent hashing](https://web.archive.org/web/20110810072552/http://www.tomkleinpeter.com/2008/03/17/programmers-toolbox-part-3-consistent-hashing/)
 7. [system design 1](https://www.acodersjourney.com)
 8. [Tim Berglund's Distributed System in One Lesson](https://learning.oreilly.com/videos/distributed-systems-in/9781491924914/9781491924914-video215269)
 9. [coder's journey](https://www.acodersjourney.com/?s=system+design)
