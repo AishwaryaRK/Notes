@@ -19,6 +19,7 @@ Resources:
 15. [grading rubric](https://medium.engineering/engineering-interviews-grading-rubric-8b409bec021f)
 16. [how to succeed in ds and algo interview](https://blog.pramp.com/how-to-succeed-in-data-structures-and-algorithms-interview-2ad1a28041b6)
 17. geekforgeeks, leetcode, topcoder, codeforces, interview bit, bytesforbytes
+18. [CSES Problem Set](https://cses.fi/problemset/)
 
 Algorithm design canvas:
 
