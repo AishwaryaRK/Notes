@@ -20,6 +20,7 @@ Resources:
 16. [how to succeed in ds and algo interview](https://blog.pramp.com/how-to-succeed-in-data-structures-and-algorithms-interview-2ad1a28041b6)
 17. geekforgeeks, leetcode, topcoder, codeforces, interview bit, bytesforbytes
 18. [CSES Problem Set](https://cses.fi/problemset/)
+19. [Technical Qs](http://memex.cc/Technical_interview)
 
 Algorithm design canvas:
 
