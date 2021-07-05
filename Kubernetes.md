@@ -127,4 +127,5 @@
 8. [external dns](https://medium.com/@marekbartik/google-kubernetes-engine-with-external-dns-on-cloudflare-provider-24beb2a6b8fc)
 9. [external dns issue](https://github.com/kubernetes-incubator/external-dns/issues/262)
 10. [ssl](https://docs.bitnami.com/kubernetes/how-to/secure-kubernetes-services-with-ingress-tls-letsencrypt/)
+11. [LISA19 - Deep Dive into Kubernetes Internals for Builders and Operators](https://youtu.be/3KtEAa7_duA)
 
